@@ -1,6 +1,20 @@
 body{
   padding: 25px;
+  font-family: "Audiowide", sans-serif;
 }
 .title {
 	color: #5C6AC4;
+}
+img {
+	border-radius: 8px;
+	width: 200px;
+	background-color: white;
+	box-shadow: 0 4px 8px rgba(92, 106, 196, 0.9), 0 6px 20px 0 rgba(92, 106, 196, 0.19);
+}
+p {
+	color: #FFFFFF;
+
+}
+li {
+	color: #FFFFFF;
 }
