@@ -1,6 +1,14 @@
+html, body {
+    height: 100%;
+}
 body{
-  padding: 25px;
-  font-family: "Audiowide", sans-serif;
+	padding: 25px;
+	font-family: "Audiowide", sans-serif;
+	background: rgb(131,58,180);
+	background: linear-gradient(315deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
+	background-repeat: no-repeat;
+    background-size: 100% 100%;
+    box-sizing: border-box;
 }
 .title {
 	color: #5C6AC4;
@@ -13,7 +21,6 @@ img {
 }
 p {
 	color: #FFFFFF;
-
 }
 li {
 	color: #FFFFFF;
