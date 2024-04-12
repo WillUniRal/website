@@ -13,8 +13,10 @@ function onYouTubeIframeAPIReady() {
     playerVars: { 'autoplay': 1, 'controls': 0 },
     events: {
       'onReady': onPlayerReady,
-      'onStateChange': onPlayerStateChange,
       'onError': onPlayerError
     }
   });
+}
+function onPlayerReady(event) {
+    document.getElementById('player');
 }
