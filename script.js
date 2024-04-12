@@ -6,17 +6,6 @@ setInterval(function () {
 	showTime();
 }, 1000);
 
-function onYouTubeIframeAPIReady() {
-  var player;
-  player = new YT.Player('player', {
-    videoId: 'dQw4w9WgXcQ',
-    playerVars: { 'autoplay': 1, 'controls': 0 },
-    events: {
-      'onReady': onPlayerReady,
-      'onError': onPlayerError
-    }
-  });
-}
-function onPlayerReady(event) {
-    document.getElementById('player');
-}
+jQuery(document).ready(function( $ ) {
+  $('.video-selector iframe')[0].contentWindow.postMessage('{"event":"command","func":"playVideo","args":""}', '*');
+});
