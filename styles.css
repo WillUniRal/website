@@ -51,14 +51,18 @@ p,li {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	overflow: hidden; /* Clip overflowing content */
 	z-index: 2;
 }
  
 .row {
-	margin-bottom: -30px;
+	display: flex;
+	justify-content: center; /* Center hexagons horizontally */
+	margin-bottom: -30px; /* Adjust margin as needed */
 }
 
 .hexagon {
+	/* flex: 0 0 auto;  Allow hexagons to shrink or grow as needed */
 	align-self: center;
 	display: inline-block;
 	box-shadow: 10px 10px 5px #000000;
