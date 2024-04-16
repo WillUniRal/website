@@ -26,7 +26,7 @@ for (let i = 0; i < hexagonPattern.length; i++) {
     }
     container.appendChild(row);
 }
-function getHexagonPositions() {
+function hexagonShift(mouseX,mouseY) {
     const hexagonPositions = [];
 
     for (let i = 0; i < hexagonPattern.length; i++) {
@@ -34,7 +34,14 @@ function getHexagonPositions() {
             const hexagonId = `hexagon_${i}_${j}`;
             const hexagonElement = document.getElementById(hexagonId);
             const rect = hexagonElement.getBoundingClientRect();
+            const x1 = rect.left + rect.width / 2;
+            const x2 = mouseX;
+            const y1 = rect.top + rect.height / 2;
+            const y2 = mouseY;
 
+            const scaley =  Math.min(1.2,(Math.sqrt(Math.abs(x1-x2)**2+Math.abs(y1-y2)**2))/500);
+            hexagonElement.style.transform = `scale(${scaley}, ${scaley})`;
+            //console.log(Math.min(1,(Math.sqrt(Math.abs(x1-x2)^2+Math.abs(y1-y2)^2))/20));
             // Push the position of the hexagon to the array
             hexagonPositions.push({
                 id: hexagonId,
@@ -46,8 +53,8 @@ function getHexagonPositions() {
 
     return hexagonPositions;
 }
-const positions = getHexagonPositions();
-console.log(positions);
+// const positions = getHexagonPositions();
+// console.log(positions);
 
 (function() {
     var mousePos;
@@ -87,7 +94,7 @@ console.log(positions);
             // We haven't seen any movement yet
         }
         else {
-            //console.log(pos);
+            hexagonShift(pos.x,pos.y);
         }
     }
 })();
