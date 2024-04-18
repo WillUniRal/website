@@ -39,7 +39,7 @@ function hexagonShift(mouseX,mouseY) {
             const y1 = rect.top + rect.height / 2;
             const y2 = mouseY;
 
-            const scaley =  Math.min(1.2,(Math.sqrt(Math.abs(x1-x2)**2+Math.abs(y1-y2)**2))/500);
+            const scaley =  Math.min(1.05,(Math.sqrt(Math.abs(x1-x2)**2+Math.abs(y1-y2)**2))/300);
             hexagonElement.style.transform = `scale(${scaley}, ${scaley})`;
             //console.log(Math.min(1,(Math.sqrt(Math.abs(x1-x2)^2+Math.abs(y1-y2)^2))/20));
             // Push the position of the hexagon to the array
