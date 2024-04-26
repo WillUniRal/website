@@ -19,7 +19,7 @@ for (let i = 0; i < hexagonPattern.length; i++) {
 		
 		hexagon.id = `hexagon_${i}_${j}`;
 		
-        hexagon.style.marginRight = '0px';
+        if(hexagonPattern.length-1==i)hexagon.style.marginBottom = '-30px';
         row.appendChild(hexagon);
 		//const rect = hexagon.getBoundingClientRect();
 		//console.log("x:"+rect.left+"y:"+rect.top);
