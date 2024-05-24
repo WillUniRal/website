@@ -6,31 +6,68 @@ setInterval(function () {
 	showTime();
 }, 1000);
 
-const container = document.querySelector('.container');
-const hexagonPattern = [13, 12, 13, 12, 13, 12, 13, 12, 13, 12];
+var div = document.getElementById('bgg');
 
-for (let i = 0; i < hexagonPattern.length; i++) {
-    const row = document.createElement('div');
-    row.classList.add('row');
-    for (let j = 0; j < hexagonPattern[i]; j++) {
-        const hexagon = document.createElement('div');
-        hexagon.classList.add('hexagon');
-        // Add spacing between hexagons
-		
-		hexagon.id = `hexagon_${i}_${j}`;
-		
-        if(hexagonPattern.length-1==i)hexagon.style.marginBottom = '-30px';
-        row.appendChild(hexagon);
-		//const rect = hexagon.getBoundingClientRect();
-		//console.log("x:"+rect.left+"y:"+rect.top);
-    }
-    container.appendChild(row);
+const container = document.querySelector('.container');
+const hexagonPattern = [15,14];
+
+const y = document.getElementsByClassName('text');
+var text = y[0];
+// console.log(text.getBoundingClientRect().top);
+
+
+const [ex,ey] = setSize();
+
+
+hexagon_create(ey);
+offsetCalculate();
+function offsetCalculate(){
+    var child = div.getElementsByClassName("text");
+    var childTop = child[0].getBoundingClientRect().top;
+
+    var parent = div.getElementsByClassName("container");
+    var parentTop = parent[0].getBoundingClientRect().top;
+
+    child[0].style.top = parentTop-childTop + 100 + "px";
 }
-function hexagonShift(mouseX,mouseY) {
+// $(document).ready(function () {
+//     offsetCalculate();
+// });
+// $(window).resize(function(){
+//     offsetCalculate();
+// });
+
+function hexagon_create(repeat) {
+    for (let i = 0; i < repeat; i++) {
+        const row = document.createElement('div');
+        row.classList.add('row');
+        for (let j = 0; j < hexagonPattern[i%2]; j++) {
+            const hexagon = document.createElement('div');
+            hexagon.classList.add('hexagon');
+            // Add spacing between hexagons
+            
+            hexagon.id = `hexagon_${i}_${j}`;
+            
+            if(repeat-1==i)hexagon.style.marginBottom = '-30px';
+            row.appendChild(hexagon);
+            //const rect = hexagon.getBoundingClientRect();
+            //console.log("x:"+rect.left+"y:"+rect.top);
+        }
+        container.appendChild(row);
+    }
+}
+function setSize() {
+	clientWidth = Math.trunc(div.clientWidth/370);
+	clientHeight = Math.trunc(div.clientHeight/370);
+	//console.log('Client Width:', clientWidth);
+	//console.log('Client Height:', clientHeight);
+	return [clientHeight, clientWidth];
+}
+function hexagonShift(mouseX,mouseY,repeat) {
     const hexagonPositions = [];
 
-    for (let i = 0; i < hexagonPattern.length; i++) {
-        for (let j = 0; j < hexagonPattern[i]; j++) {
+    for (let i = 0; i < repeat; i++) {
+        for (let j = 0; j < hexagonPattern[i%2]; j++) {
             const hexagonId = `hexagon_${i}_${j}`;
             const hexagonElement = document.getElementById(hexagonId);
             const rect = hexagonElement.getBoundingClientRect();
@@ -58,7 +95,7 @@ function hexagonShift(mouseX,mouseY) {
 
 (function() {
     var mousePos;
-
+	
     document.onmousemove = handleMouseMove;
     setInterval(getMousePosition, 100); // setInterval repeats every X ms
 
@@ -94,7 +131,8 @@ function hexagonShift(mouseX,mouseY) {
             // We haven't seen any movement yet
         }
         else {
-            hexagonShift(pos.x,pos.y);
+			//var [ex, ey] = setSize();
+            hexagonShift(pos.x,pos.y,ey);
         }
     }
 })();
