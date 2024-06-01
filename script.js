@@ -22,11 +22,11 @@ const [ex,ey] = setSize();
 hexagon_create(ey);
 offsetCalculate();
 function offsetCalculate(){
-    var child = div.getElementsByClassName("text");
-    var childTop = child[0].getBoundingClientRect().top;
+    let child = div.getElementsByClassName("text");
+    let childTop = child[0].getBoundingClientRect().top;
 
-    var parent = div.getElementsByClassName("container");
-    var parentTop = parent[0].getBoundingClientRect().top;
+    let parent = div.getElementsByClassName("container");
+    let parentTop = parent[0].getBoundingClientRect().top;
 
     child[0].style.top = parentTop-childTop + 100 + "px";
 }
@@ -93,14 +93,19 @@ function hexagonShift(mouseX,mouseY,repeat) {
 // const positions = getHexagonPositions();
 // console.log(positions);
 
+var el = document.getElementsByClassName("compression")
+for(let i = 0; i <el.length; i++) {
+    el[i].setAttribute("href","compression.html")
+}
+
 (function() {
-    var mousePos;
+    let mousePos;
 	
     document.onmousemove = handleMouseMove;
     setInterval(getMousePosition, 100); // setInterval repeats every X ms
 
     function handleMouseMove(event) {
-        var dot, eventDoc, doc, body, pageX, pageY;
+        let dot, eventDoc, doc, body, pageX, pageY;
 
         event = event || window.event; // IE-ism
 

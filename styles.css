@@ -112,9 +112,41 @@ p,li {
 */
 .topbar {
 	position: fixed;
+	display: flex;
+	align-self: center;
 	top: 0px;
 	z-index: 5;
-	background-color: #000000;
+}
+.topbar nav {
+	align-self: center;
+}
+.topbar nav ul {
+	align-self: center;
+	background-color: rgba(12, 4, 51, 0.733);
 	width: 103vw;
-	height: 50px;
+	height: 75px;
+	display: flex;
+	list-style: none;
+	/* align-items: self-start; */
+}
+.topbar nav ul li {
+    margin-left: 20px;
+	display: flex;
+	
+}
+
+.topbar nav ul li a {
+	list-style: none;
+    color: white;
+    text-decoration: none;
+    padding: 5px 10px;
+    transition: background-color 0.3s;
+}
+
+.topbar nav ul li a:hover {
+    background-color: #555;
+    border-radius: 5px;
+}
+.leftbuttonbox {
+	padding-inline: 10px;
 }
