@@ -93,6 +93,11 @@ function hexagonShift(mouseX,mouseY,repeat) {
 // const positions = getHexagonPositions();
 // console.log(positions);
 
+var el = document.getElementsByClassName("compression")
+for(let i = 0; i <el.length; i++) {
+    el[i].setAttribute("href","compression.html")
+}
+
 (function() {
     var mousePos;
 	

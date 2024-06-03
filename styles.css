@@ -15,11 +15,7 @@ div.text {
 	position: relative;
 	z-index: 3;
 }
-article li:before {
-	width:10px;
-	height:10px;
-	box-shadow: 0px 4px 8px rgba(40, 80, 100, 0.9);
-}
+
 ul {
 	list-style-position:inside;
 	margin: 0;
@@ -72,6 +68,23 @@ img {
 }
 p,li {
 	color: #FFFFFF;
+	vertical-align: middle;
+}
+
+a:visited {
+	color:white;
+}
+a:hover{
+	color: #5C6AC4;
+}
+ul {
+	list-style: none;
+}
+li::before {
+	content:'\2022  ';
+	text-shadow: 0px 4px 8px rgba(40, 80, 100, 0.9);
+	font-size:xx-large;
+	transform: translate(-10px,0);
 }
 
 .container {
@@ -110,11 +123,3 @@ p,li {
 	transition: 1s;
 }
 */
-.topbar {
-	position: fixed;
-	top: 0px;
-	z-index: 5;
-	background-color: #000000;
-	width: 103vw;
-	height: 50px;
-}
