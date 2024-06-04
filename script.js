@@ -20,16 +20,7 @@ const [ex,ey] = setSize();
 
 
 hexagon_create(ey);
-offsetCalculate();
-function offsetCalculate(){
-    var child = div.getElementsByClassName("text");
-    var childTop = child[0].getBoundingClientRect().top;
 
-    var parent = div.getElementsByClassName("container");
-    var parentTop = parent[0].getBoundingClientRect().top;
-
-    child[0].style.top = parentTop-childTop + 100 + "px";
-}
 // $(document).ready(function () {
 //     offsetCalculate();
 // });
@@ -92,10 +83,20 @@ function hexagonShift(mouseX,mouseY,repeat) {
 }
 // const positions = getHexagonPositions();
 // console.log(positions);
+pages = [
+    "psychology",
+    "compression",
+    "logic",
+    "contact",
+    "sign up"
+];
 
-var el = document.getElementsByClassName("compression")
-for(let i = 0; i <el.length; i++) {
-    el[i].setAttribute("href","compression.html")
+for(let i = 1; i <= pages.length; i++) {
+    var el = document.getElementsByClassName(i)
+    for(let j = 0; j <el.length; j++) {
+        el[j].setAttribute("href",pages[i-1]+".html")
+        el[j].innerHTML = pages[i-1];
+    }
 }
 
 (function() {

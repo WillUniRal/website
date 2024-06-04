@@ -12,7 +12,13 @@ div.text {
 	padding: 25px;
 	font-family: "Audiowide", sans-serif;
     box-sizing: border-box;
-	position: relative;
+	position: absolute;
+	top: 0px;
+	
+    right: 280vw;
+    left: 280vw;
+	bottom: 0px;
+	padding-inline: -100px;
 	z-index: 3;
 }
 
@@ -57,7 +63,7 @@ div.bg {
   }
 }
 .title {
-	margin-top: 100px;
+	margin-top: 30px;
 	color: #5C6AC4;
 }
 img {
@@ -66,7 +72,7 @@ img {
 	background-color: white;
 	box-shadow: 0px 4px 8px rgba(92, 106, 196, 0.9), 0 6px 20px 0 rgba(92, 106, 196, 0.19);
 }
-p,li {
+p,li,a {
 	color: #FFFFFF;
 	vertical-align: middle;
 }
@@ -74,13 +80,15 @@ p,li {
 a:visited {
 	color:white;
 }
-a:hover{
+a:hover {
 	color: #5C6AC4;
 }
+
 ul {
 	list-style: none;
 }
 li::before {
+	color:white;
 	content:'\2022  ';
 	text-shadow: 0px 4px 8px rgba(40, 80, 100, 0.9);
 	font-size:xx-large;
