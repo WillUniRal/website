@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Website</title>
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide">
+		<link rel="stylesheet" href="styles.css" />
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	</head>
+	<body>
+		<div class="bg", id="bgg">
+			<div class="container">
+				<div class="topbar"></div>
+			</div>
+			<div class="text">
+				<h1 class="title">Contact</h1>
+				<form>
+                    <div class="row-feild">
+                        <div class="row-item">
+                        <label for="email">Email:</label>
+                        <div class="flexy"><input type="text" id="email"></div>
+                        </div>
+                    </div>
+                    <div class="row-feild">
+                        <div class="row-item">
+                        <label for="why">Message:</label>
+                        <div class="flexy"><textarea type="text" id="why"></textarea></div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <input type="submit" id="ok" value="Send">
+                    </div>
+                    <script>
+                        function autoResizeTextarea() {
+                            const textarea = document.getElementById('why');
+                            textarea.style.height = 'auto'; // Reset the height to auto to calculate the new height
+                            textarea.style.height = textarea.scrollHeight + 'px'; // Set the height to the scroll height
+                        }
+                        const textarea = document.getElementById('why');
+                        textarea.addEventListener('input', autoResizeTextarea);
+                    </script>
+                    
+                </form>
+				
+				<h3 class="title">Pages</h3>
+				<ul>
+					<li><a class="1"></a></li>
+					<li><a class="2"></a></li>
+					<li><a class="3"></a></li>
+					<li><a class="4"></a></li>
+					<li><a class="5"></a></li>
+				</ul>
+				<script src="script.js"></script>
+				
+			</div>
+		</div>
+	</body>
+</html>

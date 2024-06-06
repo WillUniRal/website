@@ -87,7 +87,7 @@ function hexagonShift(mouseX,mouseY,repeat) {
 // console.log(positions);
 pages = [
     "psychology",
-    "compression",
+    "hex",
     "logic",
     "contact",
     "sign up"

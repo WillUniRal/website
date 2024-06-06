@@ -1,7 +1,18 @@
 let hits=0;
 const hitCounter = document.getElementById("counter");
 const pop = new Audio('pop.mp3');
-console.log(document.cookie);
+
+const cps = document.getElementById("cps");
+let clicks = 0;
+cps.addEventListener("click",function(){
+    clicks++;
+    cps.innerHTML = clicks;
+    setTimeout(function(){
+        clicks--;
+        cps.innerHTML = clicks;
+    },1000);
+});
+
 if(document!="") {
     const nam="counter=";
     let c = document.cookie;
@@ -36,6 +47,7 @@ function handleClick(event) {
 }
 
 function addclick(id) {
+
     let element = setRand(id);
     
     if (!element) {
@@ -48,5 +60,6 @@ function addclick(id) {
     element.addEventListener("click", handleClick);
     
 }
+
 
 addclick("b0");

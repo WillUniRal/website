@@ -281,7 +281,7 @@ button:focus {
 	color: white;
 	background-color: #c4b85c;
 }
-#ok:hover,.hitme:hover {
+#ok:hover,.hitme:hover,button:hover {
 	border-color: white;
 	color: white;
 	background-color: #74c45c;
