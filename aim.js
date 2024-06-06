@@ -7,6 +7,7 @@ if(document!="") {
     let c = document.cookie;
     c = c.substring(nam.length,c.length);
     hits=c;
+    hitCounter.innerHTML = "Hits: " + hits;
 }
 
 function setRand(avoid) {
