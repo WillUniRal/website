@@ -1,11 +1,12 @@
 function showTime() {
 	document.getElementById('currentTime').innerHTML = new Date().toLocaleString();
 }
-showTime();
-setInterval(function () {
-	showTime();
-}, 1000);
-
+if(document.getElementById('currentTime') != null) {
+    showTime();
+    setInterval(function () {
+        showTime();
+    }, 1000);
+}
 var div = document.getElementById('bgg');
 
 const container = document.querySelector('.container');
@@ -20,6 +21,7 @@ const [ex,ey] = setSize();
 
 
 hexagon_create(ey);
+console.log(ey);
 
 // $(document).ready(function () {
 //     offsetCalculate();
@@ -48,11 +50,11 @@ function hexagon_create(repeat) {
     }
 }
 function setSize() {
-	clientWidth = Math.trunc(div.clientWidth/370);
-	clientHeight = Math.trunc(div.clientHeight/370);
+	clientWidth = Math.trunc(div.clientWidth/300);
+	clientHeight = Math.trunc(document.getElementsByClassName("text")[0].clientHeight/57);
 	//console.log('Client Width:', clientWidth);
 	//console.log('Client Height:', clientHeight);
-	return [clientHeight, clientWidth];
+	return [clientWidth, clientHeight];
 }
 function hexagonShift(mouseX,mouseY,repeat) {
     const hexagonPositions = [];
