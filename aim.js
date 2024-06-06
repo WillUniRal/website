@@ -6,7 +6,7 @@ if(document!="") {
     const nam="counter=";
     let c = document.cookie;
     c = c.substring(nam.length,c.length);
-    hits=c;
+    if(c!="") hits=c;
     hitCounter.innerHTML = "Hits: " + hits;
 }
 
