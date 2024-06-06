@@ -2,6 +2,12 @@ let hits=0;
 const hitCounter = document.getElementById("counter");
 const pop = new Audio('pop.mp3');
 console.log(document.cookie);
+if(document!="") {
+    const nam="counter=";
+    let c = document.cookie;
+    c = c.substring(nam.length,c.length);
+    hits=c;
+}
 
 function setRand(avoid) {
     let random = avoid;
