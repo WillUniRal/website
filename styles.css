@@ -64,7 +64,7 @@ div.text {
     box-sizing: border-box;
 	position: absolute;
 	top: 0px;
-	
+	margin-top: 100px;
     right: 275vw;
     left: 275vw;
 	bottom: auto;
@@ -116,7 +116,7 @@ div.bg {
 	margin-top: 30px;
 	color: #5C6AC4;
 }
-img {
+img:not(.icon) {
 	border-radius: 8px;
 	width: 200px;
 	background-color: white;
@@ -285,4 +285,73 @@ button:focus {
 	border-color: white;
 	color: white;
 	background-color: #74c45c;
+}
+.topbar {
+	top:0;
+	left:0;
+
+	position: fixed;
+	display: flex;
+
+	z-index: 5;
+}
+.topbar nav {
+	font-family: "Audiowide", sans-serif;
+	display: flex;
+	
+	background-color: rgba(12, 4, 51, 0.855);
+	width: 100vw;
+	height: 100px;
+
+	justify-content: space-between;
+	align-content: center;
+}
+.topbar nav ul {
+	justify-content: center;
+	padding: 10px;
+	display: flex;
+	list-style: none;
+	/* align-items: self-start; */
+}
+.topbar nav ul li {
+	/* margin-inline: 10px; */
+	display: flex;
+	align-items: center;
+}
+.topbar nav ul li::before{
+	content: none;
+}
+
+.topbar nav ul li a {
+	list-style: none;
+    color: #5C6AC4;
+    text-decoration: none;
+    padding: 20px 40px;
+    transition: background-color 0.3s;
+	border-radius: 40px;
+}
+
+.topbar nav ul li a:hover {
+    border: 2px solid #74c45c;
+    background-color: #3d52377b;
+	color: #74c45c;
+}
+.icon {
+	src: url("home.png");
+	padding:20px;
+	height:1em;
+	width:1em;
+	background-color: #545b86;
+	border: 2px groove white;
+	border-radius: 25px;
+}
+.icon:hover{
+	background-color: #74c45c;
+}
+.topbar nav div{
+	display: flex;
+	height: 100%;
+	width: 100px;
+	justify-content: center;
+	align-items: center;
 }
